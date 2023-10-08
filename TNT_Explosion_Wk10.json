@@ -1,0 +1,70 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "width": 800,
+    "height": 600,
+    "params": [
+      {
+        "name": "zoom_level",
+        "value": 100,
+        "bind": {
+          "input": "range",
+          "min": 100,
+          "max": 2000,
+          "step": 100,
+          "name": "Zoom: "
+        }
+      },
+      {
+        "name": "Centre_to",
+        "value": [0, 0],
+        "bind": {
+          "input": "select",
+          "options": [[50, 60], [-100, 40], [150, 20]],
+          "labels": ["Europe", "America", "Pacific"],
+          "name": "Map Centre: "
+        }
+      }
+    ],
+    "title": "Explosion Yield of Nuclear Blasts in Kilotons (KT) of TNT",
+    "projection": {
+      "type": "equirectangular",
+      "center": {"expr": "Centre_to"},
+      "scale": {"expr": "zoom_level"}
+    },
+    "layer": [
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/FIT3179/Vega-Lite/main/2_symbol_map/js/ne_110m_admin_0_countries.topojson",
+          "format": {"type": "topojson", "feature": "ne_110m_admin_0_countries"}
+        },
+        "mark": {"type": "geoshape", "fill": "darkgrey", "stroke": "black"}
+      },
+      {
+        "data": {
+          "url": "https://raw.githubusercontent.com/jara0004/FIT3179/main/Nuclear%20Warheads.csv"
+        },
+        "mark": {"type": "circle", "tooltip": {"content": "data"}},
+        "encoding": {
+          "longitude": {"field": "Longitude", "type": "quantitative"},
+          "latitude": {"field": "Latitude", "type": "quantitative"},
+          "size": {
+            "field": "Upper_Yield",
+            "type": "quantitative",
+            "title": "Blast strength (KT)",
+            "scale": {"type": "symlog"},
+            "legend": {"format": ".2s"}
+          },
+          "color": {
+            "field": "Upper_Yield",
+            "type": "quantitative",
+            "scale": {"scheme": "redpurple"},
+            "legend": {"format": ".2s"}
+          },
+          "tooltip": [{"field": "Upper_Yield", "type": "quantitative", "title": "Blast Strength in KT"},
+          {"field": "Latitude", "type": "quantitative"},
+          {"field": "Longitude", "type": "quantitative"},
+          {"field": "WEAPON DEPLOYMENT LOCATION", "type": "nominal"}]
+        }
+      }
+    ]
+  }
