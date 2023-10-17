@@ -1,4 +1,4 @@
-WEAPON SOURCE COUNTRY,WEAPON DEPLOYMENT LOCATION,Data.Source,Latitude,Longitude,Data.Magnitude.Body,Data.Magnitude.Surface,Depth,Lower_Yield,Upper_Yield,Data.Purpose,Data.Name,Data.Type,Date.Day,Date.Month,Date.Year,Date
+WEAPON SOURCE COUNTRY,WEAPON DEPLOYMENT LOCATION,Source,Latitude,Longitude,Data.Magnitude.Body,Data.Magnitude.Surface,Depth,Lower_Yield,Upper_Yield,Purpose,Name,Type,Date.Day,Date.Month,Date.Year,Date
 USA,Alamogordo,DOE,32.54,-105.57,0.00,0.00,-0.10,21.00,21.00,Wr,Trinity,Tower,16.00,7.00,1945.00,16/07/1945
 USA,Hiroshima,DOE,34.23,132.27,0.00,0.00,-0.60,15.00,15.00,Combat,Littleboy,Airdrop,5.00,8.00,1945.00,5/08/1945
 USA,Nagasaki,DOE,32.45,129.52,0.00,0.00,-0.60,21.00,21.00,Combat,Fatman,Airdrop,9.00,8.00,1945.00,9/08/1945
