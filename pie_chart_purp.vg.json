@@ -1,0 +1,36 @@
+{
+  "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+  "data": {"url": "https://raw.githubusercontent.com/jara0004/FIT3179/main/Nuclear%20Warheads.csv"},
+  "concat": [
+    {
+      "width": 400,
+      "height": 400,
+      "title": "Countries that Manufacture Nuclear Weapons",
+      "data": {"url": "https://raw.githubusercontent.com/jara0004/FIT3179/main/Nuclear%20Warheads.csv"},
+      "transform": [{"filter": {"field": "WEAPON SOURCE COUNTRY", "oneOf": ["CHINA","FRANCE", "UK", "USSR", "USA"]}}],
+      "mark": "bar",
+      "encoding": {
+        "y": {"field": "WEAPON SOURCE COUNTRY", "type": "nominal", "title": "Weapon Source Country"},
+        "x": {"aggregate": "count", "type": "quantitative", "title": "Count"},
+        "tooltip": [{"field": "WEAPON SOURCE COUNTRY", "type": "nominal", "title": "Source Country"},
+        {"aggregate": "count", "field": "WEAPON SOURCE COUNTRY", "title": "count"}]
+      },
+      "resolve": {"legend": {"color": "independent"}}
+    },
+    {
+      "width": 350,
+      "height": 400,
+      "data": {"url": "https://raw.githubusercontent.com/jara0004/FIT3179/main/Nuclear%20Warheads.csv"},
+      "title": "Pie Chart for Weapon Purpose Excluding War",
+      "transform": [{"filter": {"field": "Purpose", "oneOf": ["Combat", "Fms", "Pne", "Se", "We", "Sam", "Pne:Plo"]}}],
+      "mark": {"type": "arc", "outerRadius": 100, "innerRadius": 0},
+      "encoding": {
+        "theta": {"aggregate": "count", "type": "quantitative", "title": "Count"},
+        "color": {"field": "Purpose", "type": "nominal", "title": "Weapon Purpose", "scale": {"scheme": "redblue"}}, 
+        "tooltip": [{"aggregate": "count"},
+        {"field": "Purpose"}]
+      },
+      "resolve": {"legend": {"color": "independent"}}
+    }
+  ]
+}

@@ -1,0 +1,12 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "height": 200,
+    "width": 800,
+    "title": "Line Chart",
+    "data": {"url": "https://raw.githubusercontent.com/jara0004/FIT3179/main/Nuclear%20Warheads.csv"},
+    "mark": {"type": "line"},
+    "encoding": {
+      "x": {"field": "Date", "timeUnit": "yearmonth", "axis": {"title": "", "format": "%Y"}},
+      "y": {"field": "Count", "type": "quantitative"}
+    }
+  }

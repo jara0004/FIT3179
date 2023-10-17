@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang = "en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+  <script src="https://cdn.jsdelivr.net/npm/vega@5.20.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-lite@5.1.0"></script>
+  <script src="https://cdn.jsdelivr.net/npm/vega-embed@6.17.0"></script>
+
+  <!-- Import pure.css -->
+  <link rel="stylesheet" href="https://unpkg.com/purecss@2.0.3/build/pure-min.css"
+    integrity="sha384-cg6SkqEOCV1NbJoCu11+bm0NvBRc8IYLRGXkmNrqUBfTjmMYwNKPWBTIKyw9mHNJ" crossorigin="anonymous">
+  
+  <!-- CSS file -->
+  <link rel="stylesheet" type="text/css" href="style.css" media="all">
+
+  <!-- Google font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Open+Sans&display=swap" rel="stylesheet">
+
+  <title> FIT3179 Assignment 2 Webpage </title>
+</head>
+
+<body>
+  <div class="page">
+    <div class="pure-g">
+      <div class="pure-u-1-1" id="mainHead">
+        <h1> FIT3179 Assignment 2 Webpage </h1>
+      </div>
+    </div> 
+
+    <hr class="seps">
+
+    <div class="desc">
+      <h2> First Visualisation Map Based </h2>
+      <p> 
+        The map based visualisation below shows the global nuclear explosions that have occured on Earth up 
+        until 2000 and the strength of the explosion is measured in KiloTons (KT) of TNT explosion. <br><br>
+        
+        Nuclear explosions consist mainly 50% of Blast Energy, 35% Thermal Energy and 15% Nuclear Radiation.
+        A blast strength is measured as yield which is the addition of blast energy and thermal energy.   
+
+        Please use the Zoom and Map Centre icons to adjust the map view to see where various nuclear blasts occured.
+      </p>
+    </div>
+
+    <div class="con">
+      <div class="con11">
+        <div class="vis_con" id="map_vis"></div>
+      </div>
+    </div>
+
+    <hr class="seps"> 
+
+    <div class="desc">
+      <h2> Second Visualisation </h2>
+      <p>
+        The line chart below shows the trend & count of how many nuclear weapons have been made cumulative to that particular year. <br>
+        It is evident that production started growing rapidly during the cold-war (1947-1991) due to political tensions.
+      </p>
+    </div>
+
+    <div class="con">
+      <div class="con11">
+        <div class="vis_con" id="line_vis"></div>
+      </div>
+      </div>
+
+      <hr class="seps">
+
+    <div class="desc">
+      <h2> Heat Map Visualisation </h2>
+      <p>
+        The Heat Map table below shows that majority of the nuclear bombs on average have a lower average blast strength.
+        <br>
+        This maybe due to majority of the bombs deployed for testing purposes and demonstration of power as shown by the Nts(Nevada Testing Site) used by USA 
+        and Semi Kazakh used by USSR. Which leads back to the cold-war between the two nations who were trying to outdo each other due to
+        poltical differences after the end of WWII. 
+      </p>
+    </div>
+
+    <div class="con">
+      <div class="con11">
+        <div class="vis_con" id="heat_map"></div>
+      </div>
+    </div>
+
+    <hr class="seps">
+
+    <div class="desc">
+      <h2> Final Visualisation Bar & Pie Chart</h2>
+      <p>
+        The bar chart shows that majority of the weapons have been created by the major powers of the world before 2000.
+        We can see that China & USSR (political allies) and Western Powers (USA, UK, FRANCE) contributed to majority of the nuclear weapons made.
+        <br>
+        We have excluded India and Pakistan as they only made a few nuclear weapons prior to 2000. Although, recently more countries have joined
+        the list of nuclear powers. For the legend on the right provided for the pie chart PNE means (Peaceful Nuclear Explosion), SAM(Surface-to-air missile), FMS(Foreign Military Sales)
+      </p>
+    </div>
+
+    <div class="con">
+      <div class="con11">
+        <div class="vis_con" id="dual_map"></div>
+      </div>
+    </div>
+
+    <hr class="seps">
+
+      <h3> Joshua Araniakulathil FIT3179 2023 </h3>
+
+   </div>
+   
+   <!-- Import the vis files-->
+   <script type="application/javascript" src="map_vis.js"></script>
+   <script type="application/javascript" src="line_vis.js"></script>
+   <script type="application/javascript" src="heat_map.js"></script>
+   <script type="application/javascript" src="dual_map.js"></script>
+</body>
+</html>

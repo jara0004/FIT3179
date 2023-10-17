@@ -1,0 +1,24 @@
+{
+    "$schema": "https://vega.github.io/schema/vega-lite/v5.json",
+    "data": {"url": "https://raw.githubusercontent.com/jara0004/FIT3179/main/Nuclear%20Warheads.csv"},
+    "height": 800,
+    "width": 700,
+    "title": "Table Heat Map of Nuclear Deployment Locations",
+    "mark": "rect",
+    "transform": [
+      {"calculate": "year(datum.Date)", "as": "Year"},
+      {"filter": "isValid(datum.Year)"}
+    ],
+    "encoding": {
+      "x": {"field": "Year", "type": "ordinal", "axis": {"title": "Year"}},
+      "y": {"field": "WEAPON DEPLOYMENT LOCATION", "type": "nominal", "axis": {"title": "Deployment Location"}},
+      "color": {"aggregate": "mean", "field": "Upper_Yield","title": "Average Blast Strength in KT" ,"scale": {"scheme": "redblue"}},
+      "tooltip": [{"field": "Year", "type": "ordinal"},
+      {"field": "WEAPON DEPLOYMENT LOCATION", "type": "nominal"},
+      {"aggregate": "mean", "field": "Upper_Yield", "title": "Average Blast Strength in KT"}]
+    },
+    "config": {
+      "axis": {"grid": true, "tickBand": "extent"}
+    }
+  }
+  
